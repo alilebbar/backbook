@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon_image/iconsociau.ico" type="image/x-icon">
+    <!-- les liens des styles -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <!--les lien des scriptes-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="scriptPost.js" defer></script>
+    <title>Post</title>
+</head>
+<body>
+  <!--Open Dev For Loading--> 
+  <div id="loadingID"> 
+    <div class="lds-circle"><div></div></div>
+  </div>
+  <!--close Dev For Loading-->
+  
+ <!--Open Dev For Navbar-->  
+
+  <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-4 shadow ">
+       <div class="container-fluid">
+         <a class="navbar-brand" href="index.htm">
+           <img src="icon_image/iconsociau.jpg" alt="brand" id="brandimg" class="rounded-4">
+           <span>BackBook</span>
+         </a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarText">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Home</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Profile</a>
+             </li>
+             </ul>
+             <!--les bouttons de nav bar-->
+
+               <!--les bouttons de login et register-->
+           <div class="d-flex justify-content-end" id="divBtnNav">
+               <button id="loginUser" type="button" class="btn btn-outline-primary p-2 btn-navbar" data-bs-toggle="modal" data-bs-target="#login_modal" data-bs-whatever="@mdo">Login</button>
+               <button id="registerUser" type="button" class="btn btn-outline-primary p-2 btn-navbar" data-bs-toggle="modal" data-bs-target="#register_modal" data-bs-whatever="@mdo">Register</button>
+           </div>
+               <!--//les bouttons de login et register-->
+
+               <!--//le boutton Logout -->
+           <div class="d-flex flex-row-reverse" id="divbtnlogout" >
+               <img src="" alt="imgProfile" id="imgProfile" class="rounded-circle">
+               <b id="usernameLogout"></b>
+               <button  type="button" class="btn btn-outline-danger p-2 " onclick="logout()">Logout</button>
+               
+               
+           </div>
+                <!--//le boutton Logout -->
+
+            <!--//les bouttons de nav bar-->
+         </div>
+       </div>
+    </nav>
+ </div>
+ <!--/Close Dev For Navbar-->
+ <!--Nom de profile-->
+ <h2 class="container mt-4" id="user-name">hamid</h2>
+ <!--//Nom de profile-->
+ <!--Open Dev For Posts-->
+ <main class="container mt-4 allPosts" id="post">
+  <!--Open Dev For Post--> 
+  <!--/////////////////////-->
+  <!--les postes remplis en scripte.js-->
+  <!--/////////////////////-->
+  <!--/Close Dev For Post-->  
+                
+ </main>  
+
+  <!--/Close Dev For Posts-->
+ <!--Alert pour indiquer que le login est parfaitement faite ou l'inverse-->
+ <div id="liveAlertPlaceholder"></div>
+ <!--/Alert pour indiquer que le login est parfaitement faite-->
+ <!--Open popup for Login-->
+ <div class="modal fade" id="login_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Username:</label>
+              <input type="text" class="form-control" id="input_username_login">
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Password:</label>
+              <input type="password" class="form-control" id="input-password-login">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="login()" id="liveAlertBtn">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--//Close popup for Login-->
+
+  <!--Open popup for register-->
+  <div class="modal fade" id="register_modal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel1">Register</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="input_username_register" class="col-form-label">Username:</label>
+              <input type="text" class="form-control" id="input_username_register">
+            </div>
+            <div class="mb-3">
+                <label for="input_name_register" class="col-form-label">Name:</label>
+                <input type="text" class="form-control" id="input_name_register">
+              </div>
+            <div class="mb-3">
+              <label for="input-password-register" class="col-form-label">Password:</label>
+              <input type="password" class="form-control" id="input-password-register">
+            </div>
+            <div class="mb-3">
+              <label for="input_img_register" class="col-form-label">Image Profile:</label>
+              <input type="file" class="form-control" id="input_img_register">
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="register()" id="liveAlertBtn">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--//Close popup for register-->
+
+  <!--Open popup for creat Post-->
+  <div class="modal fade" id="post_modal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel2">Post</h1>
+          <button type="button" class="btn-close btn-modifier-curseur" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+                <div class="mb-3">
+                    <label for="post-input_img" class="col-form-label">Image:</label>
+                    <input type="file" class="form-control" id="post-input_img">
+                </div>
+                <div class="mb-3">
+                    <label for="post-input_title" class="col-form-label">Title:</label>
+                    <input type="text" class="form-control" id="post-input_title">
+                </div>
+                <div class="mb-3">
+                    <textarea name="post-input_text" id="post-input_text" cols="59" rows="5" class="p-2 rounded form-control"></textarea>
+                </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="creatPost()" id="PublierBTN">Publier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--//Close popup for creat Post-->
+</body>
+</html>

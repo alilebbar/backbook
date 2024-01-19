@@ -1,0 +1,158 @@
+#brandimg{
+    width :50px;
+}
+#divBtnNav{
+    width: 100%;
+    gap:4px;
+}
+img{
+    max-width: 100%;
+}
+#imgProfile{
+    width: 40px;
+    margin: 3px;
+    border: 2px black solid;   
+}
+#nomProfile{
+    display: inline;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-weight: bold;
+    background-color:#F8F8F8;
+}
+#subPhoto{
+    color: rgb(165, 165, 165);
+}
+#messageRL{
+    text-align: center;
+}
+#btnplus {
+    background-color: rgb(43, 167, 216);
+    border: none;
+    font-size: 250%;
+    color: #F8F8F8;
+    border-radius:50%;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    
+}
+
+#btnplus:active{
+    
+    zoom: 150%;
+}
+#liveAlertPlaceholder{
+    bottom: 5%;
+    position: fixed;
+    z-index: 9998;
+}
+.clicker{
+    cursor: pointer;
+}
+#commentImag{
+    width: 35px;
+}
+
+.commentclass{
+    max-width: 100%;
+    background-color: #F8F8F8;  
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 2%;
+    
+}
+.commentclass p{
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #eeeded;  
+}
+#commentImag{
+    width: 35px;
+}
+.commentclass input{
+    max-width: 100%;
+    width: 1000px;
+    border-radius: 5px;
+    background-color: #EEEDED;
+}
+.commentclass button{
+    margin-left: 5px;
+    margin-bottom: 8px;
+}
+.commentclass label{
+    font-style: oblique;
+    font-weight: 900;
+}
+#imgCardProfile{
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    border: #000000 3px solid;
+}
+.numberInfo{
+    color: rgb(172, 172, 172);
+    font-weight: 100;
+}
+.numberInfo span{
+    font-size: 50px;
+    color: #000000;
+}
+.userProfilInfo{
+    font-size: 20px;
+    font-weight: 500;
+}
+/*loading curseur*/
+.lds-circle {
+    display: inline-block;
+    transform: translateZ(1px);
+  }
+  .lds-circle > div {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    background: #fffcfc;
+    animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  @keyframes lds-circle {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+  }
+  #loadingID{
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background-color: #6d6d6d75;
+    width: 100px;
+    height: 100px;
+    margin: auto auto;
+    border-radius: 10%;
+    
+  }

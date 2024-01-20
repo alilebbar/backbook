@@ -290,6 +290,8 @@ function logout(){
     setupUI()
     cacherCom()
     getPosts()
+    infoUser()
+    getPostsProfile()
     
 }
 
@@ -346,10 +348,14 @@ function setupUI(){
     let usernamenav = document.getElementById("usernameLogout")
     let imgProfile= document.getElementById("imgProfile")
     let addPost = document.getElementById("btnplus")
+    let profilePage = document.getElementById("profilePage")
     if (token !== null)
     {
         if(addPost){
             addPost.style.setProperty("display","block","important")
+        }
+        if(profilePage){
+            profilePage.style.setProperty("display","block","important")
         }
         divlogout.style.setProperty("display","block","important")
         divlogregi.style.setProperty("display","none","important")
@@ -366,6 +372,9 @@ function setupUI(){
     }else{
         if(addPost){
             addPost.style.setProperty("display","none","important")
+        }
+        if(profilePage){
+            profilePage.style.setProperty("display","none","important")
         }
         
         divlogout.style.setProperty("display","none","important")
@@ -406,6 +415,9 @@ function profileUsers(idUser){
     
 }
 
+////////////////////////////////////////////////////////
+//fonction pour afficher ou rendre le loader invisible
+////////////////////////////////////////////////////////
 function loader(show = true){
     if(show){
         document.getElementById("loadingID").style.visibility = "visible"
@@ -413,6 +425,7 @@ function loader(show = true){
         document.getElementById("loadingID").style.visibility = "hidden"
     }
 }
+
 /////////////////////////////////////
 //la déclaration des variable globale
 /////////////////////////////////////

@@ -26,10 +26,10 @@ async function getPosts(){
         postsAfiichage.innerHTML+=`
     <div class="card mt-3 shadow clicker" id="${post.id}" >
         <div class="card-header">
-          <div onclick="profileUsers(${post.author.id})">
+          <span onclick="profileUsers(${post.author.id})">
             <img src="${post.author.profile_image}" alt="imgProfile" id="imgProfile" class="rounded-circle">
             <p id="nomProfile">@${post.author.username}</p>
-          </div>
+          </span>
           ${btnUp}
           ${btnDel}
           <input type="hidden" id="hidden-id" value="">

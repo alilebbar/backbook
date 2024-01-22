@@ -442,7 +442,7 @@ setupUI()
 //le scrolling
 //////////////
 window.addEventListener("scroll",()=>{
-    let endOfpage = window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+    let endOfpage = window.innerHeight + window.pageYOffset >= document.body.scrollHeight
     if(endOfpage && page<=lastPage){
         getPosts(++page)
     }
